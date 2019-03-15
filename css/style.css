@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+@import url('https://fonts.googleapis.com/css?family=Merienda+One');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
+
+
+*{
+	font-family: sans-serif;
+	box-sizing: border-box;
+	outline: none;
+
+}
+
+body {
+	background-image: url(../img/fondo2.jpg) ;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #aaa;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+header{
+	height: 10vh;
+}
+
+header #titulo_web a{
+	text-decoration: none;
+	color:  #404040;
+	font-size: 1.8rem;
+	font-family: 'Merienda One', cursive;
+	background-color: #F3F781;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	box-shadow: 0 10px 6px -6px #777;
+	border-radius: 3px;
+}
+
+header #subtitulo_web{
+	text-decoration: none;
+	color: #303030;
+	font-size: 1.2rem;
+	margin-left: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 11px 11px 11px 0;
+}
+
+#container-columnas{
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 85vh;
+	align-items: stretch;
+}
+.columna{
+	background-color: rgba(255,255,255,0.95);
+	flex-basis: 24%;
+	box-sizing: border-box;
+	border-radius: 3px;
+	box-shadow: 15px 15px 11px rgba(70,70,70,0.6);
+
+}
+
+.columna-titulo{
+	color: #444;
+	font-size: 1.5rem;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.tools{
+	color: white;
+	background-color: rgba(70,70,70,0.6);
+	padding: 15px;
+}
+
+.postIt{
+	display: inline-flex;
+	position: absolute;
+	left:50px;
+	z-index: 1;
+	color: #404040;
+	background-color: #F3F781;
+	width: 150px;
+	min-height: 35px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 0 13px 6px -6px #777;
+	border-radius: 3px;
+	transition-duration: 0.3s;
+	hyphens: auto;
+	cursor: grab;
+}
+
+.postIt small{
+	font-size: 0.7rem;
+	color: grey;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	margin-left: 5px;
+	height: 2px;
+	cursor: crosshair;
+}
+.postIt p:nth-child(2){
+	font-family: 'Courgette', cursive;
+	font-size: 1.2rem;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.postIt p:nth-child(3){
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.3rem;
+	text-align: right;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 25px;
+	bottom: 5px;
+	border-radius: 50%;
+}
+
+
+#postIt-form-crear, #postIt-form-modifica-campos, #timing{
+	color: #888;
+	background-color: #F3F781;
+	min-width: 100px;
+	font-size: 0.8rem;
+
+	width:auto;
+	padding:8px;
+	border-radius: 3px;
+	box-shadow: 0 10px 6px -6px #777;
+	position: relative;
+}
+#postIt-form-crear section{
+	text-align: right;
+}
+#postIt-form-crear{
+	margin-top: -30px;
+}
+
+#p-peso{
+	text-align: right;
+	position: absolute;
+	bottom: 10px;
+	right: 30px;
+}
+
+#p-peso input, #peso-modificar{
+	width: 38px;
+	font-size: 1.2rem;
+	text-align: right;
+}
+
+.colores input[type=button]{
+	border-radius: 50%;
+	text-align: right;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	height: 30px;
+	width: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+	margin-left: 10px;
+	border: 1px solid #fff;
+}
+
+#target-postIt-nuevos{
+	position: relative;
+}
+
+#target-modifica-postIt h4{
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+	background-color: rgba(70,70,70,0.6);
+	padding: 5px;
+}
+
+input[type=text], input[type=number], input[type=email], input[type=url]{
+	border: none;
+	background-color:rgba(255,255,255,0);
+	border-bottom: 1px dashed black;
+	font-size: 1rem;
+	font-weight: bolder;
+}
+
+input[type=number]{
+	width: 20px;
+}
+
+input[type=text]{
+	width: 90%;
+}
+
+span.peso-circulo {
+	background: rgba(70,70,70,0.6);
+	border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	color: #ffffff;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1.6em;
+	margin-right: 15px;
+	text-align: center;
+	width: 1.6em;
+}
+
+.ui-resizable-helper { border: 2px dotted #00F; }
+
+.tooltip_ancla{
+	color: #ddd;
+}
+
+#btn-cancelar{
+	float:right;
+	margin: 0;
+}
+
+.icono{
+	display: inline;
+}
+
+.icono img{
+	width: 45px;
+	height:45px;
+	box-sizing: border-box;
+	background-color: #F3F781;
+	border-radius: 50%;
+	padding: 9px;
+}
+
+#estado small{
+	font-size: 0.6rem;
+}
+.radio-estado{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: inline-block;
+	position: relative;
+	color: #f1f1f1;
+	background-color: #ccc;
+	opacity: 0.6;
+	top: 10px;
+	height: 30px;
+	width: 30px;
+	border: 0;
+	border-radius: 50px;
+	cursor: pointer;
+	margin-right: 7px;
+	outline: none;
+}
+.radio-estado:checked::before{
+	position: absolute;
+	font: 13px/1 'Open Sans', sans-serif;
+	left: 11px;
+	top: 7px;
+	content: '\02143';
+	transform: rotate(40deg);
+}
+
+.radio-estado:hover{
+	background-color: #888;
+}
+.radio-estado:checked{
+	background-color: #888;
+}
+
+#calendar{
+	color: #888;
+	font-size: 0.7rem;
+	background-color: #fff;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+#calendar input{
+	width: 100px !important;
+	color: #444;
+	text-align:  center;
+}
+
+/********Progressbar*************/
+.ui-progressbar {
+	position: relative;
+	color:#362878;
+	width:650px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.progress-label {
+	position: absolute;
+	left: 50%;
+	top: 4px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
+	margin-left:-40px;
+}
+
+
+.yellow{background-color: #F3F781 !important;}
+.green{background-color: #BEF781 !important;}
+.red{background-color: #F78181 !important;}
+
+.ui-datepicker-header{
+
+}
+
+.error{
+	color: red;
+	font-size: 0.7rem;
+}
+
+
+/*********** REGISTER ***********/
+
+#container-columnas-register{
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 85vh;
+	align-items: stretch;
+}
+
+.columna-register{
+	display: flex;
+padding-left: 20px;
+	background-color: rgba(255,255,255,0.95);
+	flex-basis: 80%;
+	box-sizing: border-box;
+	border-radius: 3px;
+	box-shadow: 15px 15px 11px rgba(70,70,70,0.6);
+}
+
+#reg fieldset{
+	left:50px;
+	z-index: 1;
+	color: #404040;
+	background-color: #F3F781;
+	padding: 10px;
+}
+
+#reg-container{
+	/*Posicionado de forma relativa para determinar posición de sus elementos hijos*/
+	width: 60%;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 20px;
+}
+
+#reg-requerido{
+	/*Posicionado de forma absoluta dentro del elemento contenedor*/
+	color: red;
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+
+#reg fieldset{
+	border: none;
+}
+
+#reg label{
+	/*Estilo general de los label*/
+	display: inline-block;
+	width: 25%;
+	vertical-align: top;
+	font-size: 0.9rem;
+}
+
+#reg input, #reg textarea, #reg-selector{
+	width: 40%;
+	margin: 5px 0;
+	font-size: 0.75rem !important;
+	font-weight:  normal;
+}
+
+#reg-buscar input:focus{
+	/*Aumenta ancho al situar el cursor dentro para escribir*/
+	width: 250px;
+}
+
+#reg-textarea, #reg-selector{
+	height: 100px;
+}
+
+#reg small{
+	/*Aclaraciones a los campos*/
+	font-family: sans-serif;
+	font-size: 0.7em;
+}
+
+/*Barra entre campos más tenues*/
+.reg-bar_light{
+	border: 0.5px solid #ddd;
+}
+
+.reg-boton{
+	/*Estilo botones estado inactivo*/
+	border-radius: 4px;
+	background-color: gray;
+	color: #F3F781;
+	padding: 7px;
+	font-size: 1.2rem;
+}
+
+.reg-boton:hover{
+	/*Estilo botones estado ratón flotando sobre ellos*/
+	cursor: pointer;
+	background-color: #BEF781;
+	box-shadow: #999 10px 5px 5px ;
+}
+
+.reg-boton:active{
+	/*Estilo botones estado durante el clic*/
+	cursor: e-resize;
+	color: #fff;
+	background-color: #555;
+}
+
+.reg-botonEnviar{
+	margin-left: 25.5%;
+}
+
+/*Comportamiento responsive de las aclaraciones.
+En pantallas de menos de 1000px se comporatan como elementos block,
+saltando a la siguiente linea.*/
+@media screen and (max-width: 1000px) {
+	#reg small{
+		display: block;
+	}
+}
+#userName{
+	text-transform: uppercase;
+}

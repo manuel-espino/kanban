@@ -1,0 +1,128 @@
+
+/*********** REGISTER ***********/
+
+#container-columnas-register{
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 85vh;
+	align-items: stretch;
+}
+
+.columna-register{
+	display: flex;
+padding-left: 20px;
+	background-color: rgba(255,255,255,0.95);
+	flex-basis: 80%;
+	box-sizing: border-box;
+	border-radius: 3px;
+	box-shadow: 15px 15px 11px rgba(70,70,70,0.6);
+}
+
+#reg fieldset{
+	left:50px;
+	z-index: 1;
+	color: #404040;
+	background-color: #F3F781;
+	padding: 10px;
+}
+
+#reg-container{
+	/*Posicionado de forma relativa para determinar posición de sus elementos hijos*/
+	width: 60%;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 20px;
+}
+
+#reg-requerido{
+	/*Posicionado de forma absoluta dentro del elemento contenedor*/
+	color: red;
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+
+#reg fieldset{
+	border: none;
+}
+
+#reg label{
+	/*Estilo general de los label*/
+	display: inline-block;
+	width: 25%;
+	vertical-align: top;
+	font-size: 0.9rem;
+}
+
+#reg input, #reg textarea, #reg-selector{
+	width: 40%;
+	margin: 5px 0;
+	font-size: 0.75rem !important;
+	font-weight:  normal;
+}
+
+#reg-buscar input:focus{
+	/*Aumenta ancho al situar el cursor dentro para escribir*/
+	width: 250px;
+}
+
+#reg-textarea, #reg-selector{
+	height: 100px;
+}
+
+#reg small{
+	/*Aclaraciones a los campos*/
+	font-family: sans-serif;
+	font-size: 0.7em;
+}
+
+/*Barra entre campos más tenues*/
+.reg-bar_light{
+	border: 0.5px solid #ddd;
+}
+
+.reg-boton{
+	/*Estilo botones estado inactivo*/
+	border-radius: 4px;
+	background-color: gray;
+	color: #F3F781;
+	padding: 7px;
+	font-size: 1.2rem;
+}
+
+.reg-boton:hover{
+	/*Estilo botones estado ratón flotando sobre ellos*/
+	cursor: pointer;
+	background-color: #BEF781;
+	box-shadow: #999 10px 5px 5px ;
+}
+
+.reg-boton:active{
+	/*Estilo botones estado durante el clic*/
+	cursor: e-resize;
+	color: #fff;
+	background-color: #555;
+}
+
+.reg-botonEnviar{
+	margin-left: 25.5%;
+}
+
+
+.error{
+	color: darkred;
+	font-weight: bolder;
+margin-left: 10px;
+font-size: 0.7rem !important;
+}
+/*Comportamiento responsive de las aclaraciones.
+En pantallas de menos de 1000px se comporatan como elementos block,
+saltando a la siguiente linea.*/
+@media screen and (max-width: 1000px) {
+	#reg small{
+		display: block;
+	}
+}

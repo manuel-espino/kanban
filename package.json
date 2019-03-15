@@ -1,0 +1,30 @@
+{
+  "name": "khanban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "abstract-leveldown": "^6.0.1",
+    "typescript": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuel-espino/kanban.git"
+  },
+  "keywords": [
+    "kanban",
+    "worklfow",
+    "scrum",
+    "agile"
+  ],
+  "author": "Manuel Espino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuel-espino/kanban/issues"
+  },
+  "homepage": "https://github.com/manuel-espino/kanban#readme"
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- jQuery -->
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+	<!-- jQuery pliging Validate -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js" charset="utf-8"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/additional-methods.js" charset="utf-8"></script>
+
+	<!-- jQuery UI -->
+	<script type="text/javascript" src="js/jquery-ui/jquery-ui.js"></script>
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.css">
+
+	<!-- jQuery UI CONTEXT MENU-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+
+
+	<!-- Hoja de estilos propia -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="img/favicon.png" type="image/gif" sizes="16x16">
+
+	<!-- jQuery propio -->
+	<script src="js/personal.js" charset="utf-8"></script>
+	<script src="js/funcionesAjax.js" charset="utf-8"></script>
+	<title>Khan>Ban</title>
+</head>
+<body>
+	<div id="container">
+		<header> <h1 id="titulo_web"><a href="#">Khan <span id="arrow"> ↬ </span> Ban </a> <span id="subtitulo_web">Get a better <u>WORKFLOW!</u></span>		<span id="target-postIt-nuevos"></span>
+		</h1>
+	</header>
+	<ul id="container-columnas">
+		<li class="columna fase" id="todo">
+			<table>
+				<thead>
+					<h2 class="columna-titulo" >TO DO<span class="tooltip_ancla" title="This is the place for where you log all the action you need to cover to accomplish the project goals. All unattended action must be finded here."> ?</span> </h2>
+				</thead>
+			</table>
+		</li>
+		<li class="columna fase" id="progress">
+			<table>
+				<thead> <h2 class="columna-titulo" id="progress"> IN PROGRESS <span class="tooltip_ancla" title="Place here all the action you and your team are working on."> ?</span></h2> </thead>
+			</table>
+		</li>
+		<li class="columna fase" id="done">
+			<table>
+				<thead> <h2 class="columna-titulo" >DONE <span class="tooltip_ancla" title="Have you completely finished the task? Have you already tested it? Well done!"> ?</span></h2> </thead>
+			</table>
+
+		</li>
+		<li class="columna tools">
+				<div id="iconos">
+					<div id="trash-icon" class="icono"> <img src="img/trash-bin.png" alt="trash"> </div>
+					<div id="save-icon" class="icono"> <img src="img/save-icon.png" alt="save"> </div>
+					<div id="cal-icon" class="icono"> <img src="img/cal-icon.png" alt="calendr"> </div>
+					<div id="load-icon" class="icono"> <img src="img/load-icon.png" alt="load"> </div>
+
+				</div>
+				<hr>
+				<div id="timing">From: <span id="from-text">...................</span> / To: <span id="to-text">...................</span></div>
+<hr>
+				<h2 class="columna-titulo"></h2>
+
+					<div id="postIt-form-crear">
+						<form id="form-crear" onsubmit="return false;">
+							<p>
+								<label for="accion_insertar"> Action</label>
+								<input type="text" name="accion_insertar" id="accion_insertar" required minlength=3 >
+								<span class="tooltip_ancla" title="A brief description of a simple task. Be concise!"> ?</span>
+								<p class="errorTxt"></p>
+							</p>
+							<br>
+							<p id="p-peso">
+								<label for="peso">Weight</label>
+								<input type="number" id="peso-insertar" min="1" max="10" value="1">
+								<span class="tooltip_ancla" title="This number expresses the weight of a task, it means, the effort that the action involve to be done."> ?</span>
+							</p>
+							<p> <input type="submit" value="+" id="accion-btn-insertar"  class="ui-button ui-corner-all ui-widget"></p>
+						</form>
+					</div>
+					<!---<div id="progressbar"><div class="progress-label">Loading...</div></div>-->
+<hr>
+					<div id="target-modifica-postIt" >
+						<form id="postIt-form-modifica" onsubmit="return false;">
+							<div id="postIt-form-modifica-campos">
+								<p id="btn-cancelar"><input type="button" value="x" id="btn-cancelar-modificacion" class="ui-button ui-corner-all ui-widget"></p>
+
+								<input type="number" name="id" id="id-modificar" hidden>
+
+								<p>
+									<label for="accion">Action</label>
+									<input type="text" id="accion-modificar" required minlength=3>
+								</p>
+								<p><label for="peso">Wight</label>
+									<input type="number" id="peso-modificar" min="1"max="10">
+								</p>
+								<section class="colores">
+									<p>
+										<label>Color</label>
+										<span class="tooltip_ancla" title="Use your own color code to understand more easily the single task status."> ?</span>
+										<input type="button"  id="yellow" class="yellow">
+										<input type="button" id="green" class="green">
+										<input type="button" id="red" class="red">
+									</p>
+								</section>
+								<section id="estado">
+									<p> <label>Status</label>
+										<span class="tooltip_ancla" title="Fix the status of the action."> ?</span>
+									</p>
+									<p>
+										<input type="radio" class="radio-estado" name="estado" value="todo" id="estado-todo">
+										<small> TODO</small>
+										<br>
+
+										<input type="radio" class="radio-estado" name="estado" value="progress"  id="estado-progress">
+										<small>IN PROGRESS</small>
+										<br>
+										<input type="radio" class="radio-estado" name="estado" value="done" id="estado-done">
+										<small>DONE</small>
+
+									</p>
+								</p>
+							</section>
+							<p>
+								<p> <input type="submit" value="Modficar" id="accion-btn-modificar" class="ui-button ui-corner-all ui-widget">
+								</p>
+							</p>
+						</div>
+					</form>
+				</div>
+	</li>
+
+</ul>
+</div>
+</div>
+<div id="save-advise" title="Error">
+	<p>You haven't elements to save!</p>
+</div>
+<div id="trash-advise" title="Error">
+	<p>Don't click me! Please, drop on me the actions.</p>
+</div>
+<div id="calendar" title="Timing">
+	<p>From:<input type="text" id="from" name="from">
+		To: <input type="text" id="to" name="to">
+	</p>
+	<br>
+	<p><input type="button" value="Set dates" id="btn-set-dates" class="ui-button ui-corner-all ui-widget"></p>
+
+</div>
+</body>
+</html>

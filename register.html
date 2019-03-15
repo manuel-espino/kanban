@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- jQuery -->
+
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<!-- jQuery pliging Validate -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js" charset="utf-8"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/additional-methods.js" charset="utf-8"></script>
+
+	<!-- jQuery UI -->
+	<script type="text/javascript" src="js/jquery-ui/jquery-ui.js"></script>
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.css">
+
+	<!-- jQuery UI CONTEXT MENU-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+
+
+	<!-- Hoja de estilos propia -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/register-style.css">
+
+	<link rel="icon" href="img/favicon.png" type="image/gif" sizes="16x16">
+
+
+
+	<!-- jQuery propio -->
+	<script src="js/personal.js" charset="utf-8"></script>
+	<script src="js/register-personal.js" charset="utf-8"></script>
+	<title>Khan↬Ban</title>
+</head>
+<body>
+	<div id="container">
+		<header> <h1 id="titulo_web"><a href="#">Khan <span id="arrow"> ↬ </span> Ban </a> <span id="subtitulo_web">Get a better <u>WORKFLOW!</u></span>		<span id="target-postIt-nuevos"></span>
+		</h1>
+	</header>
+	<ul id="container-columnas-register">
+		<li class="columna-register" id="reg">
+				 <h2 class="columna-titulo" >SING UP!</h2>
+
+				 <div id='reg-container'>
+					 <!--*******************************  REGISTRATION FORM  *************************-->
+					 <form action='' id="register" method="post" onsubmit="">
+						<fieldset>
+							 <p>
+								 <label for='reg-user'>User name: * </label>
+							 <input type='text' name='reg-user' id='reg-user' placeholder='yourName' autofocus>
+							 </p>
+							 <p>
+								 <label for='reg-pass'>Password: * </label>
+							 <input type='password'  name='reg-pass' id='reg-pass' placeholder='*****' autocomplete>
+							 </p>
+							 <hr class='reg-bar_light'/>
+
+							 <label for='reg-email'>Email: *</label>
+							 <input type='email'  name='reg-email' id='email' placeholder='name@any.com'>
+
+							 <hr class='reg-bar_light'/>
+
+							 <label for='reg-web'>Website: </label>
+							 <input type='url' name='reg-web' id='reg-web' placeholder="https://www.">
+
+							 <hr class='reg-bar_light'/>
+
+							 <label for='reg-hobies'>Insterest: </label>
+
+							 <select multiple name='reg-selector' id='reg-selector' required>
+								 <option value='travel'>Travel</option>
+								 <option value='tecnologia'>Technology</option>
+								 <option value='language'>Languages</option>
+								 <option value='arts'>Arts</option>
+								 <option value='sciences'>Sciences</option>
+								 <option value='sport'>Others</option>
+
+							 </select>
+
+							 <hr class='reg-bar_light'/>
+
+						 <label for='reg-mensaje'>About you</label>
+						 <textarea name='reg-mensaje' id='reg-mensaje' placeholder="Tell everybody who you are." ></textarea>
+						 <hr class='reg-bar_light'>
+
+					 <!--**********  Enviar formulario  *************-->
+
+						 <button class='reg-boton reg-botonEnviar' id="btn-register">Register</button>
+					 </fieldset>
+				 </form>
+			  </div>
+
+		</li>
+
+</ul>
+</div>
+</div>
+
+</body>
+</html>
